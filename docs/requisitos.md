@@ -39,10 +39,12 @@ Desarrollar una aplicación web full-stack para la **Fundación Aurora** utiliza
 ## 4. Requisitos del Sistema
 
 ### **A. Requisitos Funcionales (RF)**
-* **RF01 - Registro de Mascotas:** El administrador debe poder crear, editar, listar y eliminar mascotas (nombre, especie, raza, edad, estado de salud, descripción, URL de imagen).
-* **RF02 - Catálogo Público:** Los usuarios visitantes deben poder consultar las mascotas disponibles y filtrarlas por especie o edad.
-* **RF03 - Solicitud de Adopción:** Los visitantes deben poder enviar un formulario de adopción asociado a una mascota específica.
-* **RF04 - Gestión de Solicitudes:** El administrador debe poder revisar, aprobar o rechazar las solicitudes recibidas. Al aprobar una solicitud, la mascota cambia automáticamente su estado a `ADOPTADO`.
+* **RF01 - Gestión de Usuarios y Roles:** El sistema debe permitir registrar usuarios y gestionar roles diferenciados (`ADMINISTRADOR` y `ADOPTANTE`).
+* **RF02 - Autenticación y Seguridad:** El sistema debe validar credenciales de acceso para proteger las rutas del panel de administración y validar datos de identificación para evitar registros duplicados.
+* **RF03 - Registro y Gestión de Mascotas (Admin):** El usuario Administrador debe poder crear, editar, listar y eliminar mascotas (nombre, especie, raza, edad, estado de salud, descripción, URL de imagen).
+* **RF04 - Catálogo Público:** Los usuarios visitantes y adoptantes pueden consultar las mascotas disponibles y filtrarlas por especie o edad.
+* **RF05 - Solicitud de Adopción (Adoptante):** Los usuarios registrados como adoptantes pueden enviar un formulario para postularse a una mascota específica.
+* **RF06 - Gestión de Solicitudes (Admin):** El Administrador puede evaluar, aprobar o rechazar las solicitudes de adopción. Al aprobar una solicitud, la mascota cambia automáticamente su estado a `ADOPTADO`.
 
 ### **B. Requisitos No Funcionales (RNF)**
 * **RNF01 (Arquitectura):** Separación completa entre el cliente Web (React) y la API REST (Spring Boot).
