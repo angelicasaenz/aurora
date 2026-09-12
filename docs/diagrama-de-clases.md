@@ -6,8 +6,7 @@ Este documento contiene el Diagrama de Clases orientadas a objetos para el backe
 
 ## 🎨 Diagrama UML
 
-![Diagrama de Clases UML](./diagrama-de-clases.png)
-
+<img src="diagrama-de-clases.png" alt="Diagrama de Clases UML" width="400" />
 ---
 
 ## 📌 Explicación del Modelo de Clases
