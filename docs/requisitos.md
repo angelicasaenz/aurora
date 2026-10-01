@@ -1,21 +1,24 @@
-# Documento de Formulación de Proyecto y Requisitos del Sistema
+# 📄 Documento de Formulación de Proyecto y Requisitos del Sistema
 
 **Proyecto:** Fundación Aurora (Plataforma Web de Adopción de Mascotas)
 
 ---
 
 ## 👥 Equipo de Trabajo
-* **Angélica Sáenz** - *Estudiante de Ingeniería de Software*
-* **Paula Cabrera** - *Estudiante de Ingeniería de Software*
+
+* **Angélica Sáenz** — *Estudiante de Ingeniería de Software*
+* **Paula Cabrera** — *Estudiante de Ingeniería de Software*
 
 ---
 
 ## 1. Introducción
+
 El presente documento establece la especificación técnica y el alcance del sistema de información para la **Fundación Aurora**. La propuesta busca implementar una plataforma web desacoplada que optimice la gestión de mascotas rescatadas y sistematice el flujo de solicitudes de adopción responsable.
 
 ---
 
 ## 2. Descripción del Problema
+
 Muchas organizaciones de rescate animal enfrentan dificultades para gestionar la información de los ejemplares rescatados. Los procesos de registro, seguimiento de salud y evaluación de solicitudes de adopción se realizan frecuentemente en formatos físicos o carpetas desconectadas, lo que genera desorganización, pérdida de datos e ineficiencia en los tiempos de respuesta.
 
 Para solucionar esta problemática, se define un sistema de información centralizado que permite administrar el catálogo de mascotas de la fundación y automatizar la recepción y evaluación de las solicitudes de adopción.
@@ -40,13 +43,13 @@ Desarrollar una aplicación web full-stack para la **Fundación Aurora** utiliza
 
 ### **A. Requisitos Funcionales (RF)**
 * **RF01 - Gestión de Usuarios y Roles:** El sistema debe permitir registrar usuarios y gestionar roles diferenciados (`ADMINISTRADOR` y `ADOPTANTE`).
-* **RF02 - Autenticación y Seguridad:** El sistema debe validar credenciales de acceso para proteger las rutas del panel de administración y validar datos de identificación para evitar registros duplicados.
-* **RF03 - Registro y Gestión de Mascotas (Admin):** El usuario Administrador debe poder crear, editar, listar y eliminar mascotas (nombre, especie, raza, edad, estado de salud, descripción, URL de imagen).
-* **RF04 - Catálogo Público:** Los usuarios visitantes y adoptantes pueden consultar las mascotas disponibles y filtrarlas por especie o edad.
-* **RF05 - Solicitud de Adopción (Adoptante):** Los usuarios registrados como adoptantes pueden enviar un formulario para postularse a una mascota específica.
-* **RF06 - Gestión de Solicitudes (Admin):** El Administrador puede evaluar, aprobar o rechazar las solicitudes de adopción. Al aprobar una solicitud, la mascota cambia automáticamente su estado a `ADOPTADO`.
+* **RF02 - Autenticación y Seguridad:** El sistema debe validar credenciales de acceso para proteger las rutas del panel de administración y verificar el rol de los usuarios.
+* **RF03 - Registro y Gestión de Mascotas y Catálogos (Admin):** El usuario Administrador debe poder crear, editar, listar y eliminar mascotas (`nombre`, `especie`, `raza`, `edadAproximada`, `estadoSalud`, `descripcion`, `urlImagen`), así como clasificarlas dentro de un `Catalogo` o sección específica.
+* **RF04 - Consulta de Catálogo Público:** Los usuarios visitantes y adoptantes pueden consultar las mascotas con estado `DISPONIBLE`, agrupadas por catálogo y filtrarlas dinámicamente por especie.
+* **RF05 - Solicitud de Adopción (Adoptante):** Los usuarios autenticados con rol adoptante pueden registrar un formulario de postulación vinculado a una mascota específica, creando la solicitud en estado `PENDIENTE`.
+* **RF06 - Gestión de Solicitudes (Admin):** El Administrador puede revisar las solicitudes recibidas y cambiar su estado a `APROBADA` o `RECHAZADA`. Al aprobar una solicitud, el estado de la mascota asociada debe cambiar automáticamente a `ADOPTADO`.
 
 ### **B. Requisitos No Funcionales (RNF)**
-* **RNF01 (Arquitectura):** Separación completa entre el cliente Web (React) y la API REST (Spring Boot).
-* **RNF02 (Persistencia):** Uso de base de datos relacional PostgreSQL con Spring Data JPA.
-* **RNF03 (Despliegue):** Alojamiento en servicios cloud accesibles mediante HTTPS para integración en el portafolio de proyectos.
+* **RNF01 (Arquitectura Desacoplada):** Separación completa entre el cliente Web (React) y el servidor Backend (API REST en Spring Boot).
+* **RNF02 (Persistencia de Datos):** Uso de base de datos relacional PostgreSQL gestionada mediante Spring Data JPA para la interacción con las entidades del sistema.
+* **RNF03 (Despliegue y Seguridad):** Alojamiento en servicios en la nube (Vercel / Render / Supabase) con comunicación segura mediante HTTPS para integración en el portafolio de proyectos.
