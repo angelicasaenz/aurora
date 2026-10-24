@@ -1,84 +1,78 @@
-# 🐾 Fundación Aurora - Plataforma Web de Adopción de Mascotas
+# 🐾 Fundación Aurora - Backend & API REST
 
 <p align="center">
   <img src="docs/logo-fundacion.png" alt="Logo Fundación Aurora" width="220" />
 </p>
 
-¡Bienvenidos al repositorio oficial de la **Fundación Aurora**!
+¡Bienvenidos al repositorio del **Backend** de la **Fundación Aurora**!
 
-> 📢 **Nota de desarrollo:** Este proyecto utiliza el flujo de trabajo de GitFlow. El desarrollo activo de nuevas funcionalidades, Sprints y documentación se encuentra en la rama **`develop`**.
+> 📢 **Nota de desarrollo:** Este repositorio contiene la API REST y la lógica del servidor del proyecto. El desarrollo activo de nuevas funcionalidades y Sprints del backend se gestiona en la rama **`develop`**.
 
-> 🎓 **Nota académica:** Este es un **proyecto ficticio** desarrollado con fines exclusivamente académicos para la asignatura **Proyecto de Software**. La "Fundación Aurora" es un escenario simulado para aplicar buenas prácticas de ingeniería de software.
-
-Nuestro objetivo es simular y construir una plataforma web real que ayudaría a una fundación de animales a gestionar sus mascotas rescatadas y facilitar el proceso de adopción responsable.
+> 🎓 **Nota académica:** Proyecto simulado desarrollado con fines académicos para la asignatura **Proyecto de Software**.
 
 ---
 
-## 👥 Equipo de Trabajo
+## 👥 Equipo de Desarrollo
 
-* **Angélica Sáenz** — *Estudiante de Ingeniería de Software*
-* **Paula Cabrera** — *Estudiante de Ingeniería de Software*
-
----
-
-## 📌 ¿De qué trata el proyecto?
-
-El sistema permitirá:
-1. **Mostrar un catálogo interactivo** donde las personas puedan ver las mascotas disponibles para adoptar (perros, gatos, etc.) organizadas por secciones con sus fotos y descripción.
-2. **Enviar solicitudes de adopción** a través de un formulario web sencillo.
-3. **Administrar la fundación** mediante un panel privado donde se puedan registrar nuevas mascotas, gestionar catálogos y evaluar las solicitudes recibidas.
+- **Angélica Sáenz** — *Estudiante de ingeniería de software*
+- **Paula Cabrera** — *Estudiante de ingeniería de software*
 
 ---
 
-## 🎯 Gestión del Proyecto (Metodología Scrum)
+## 📌 Alcance del Backend
 
-El seguimiento de los Sprints, las Historias de Usuario, el Product Backlog y la planificación del equipo se gestionan bajo el marco de trabajo **Scrum** a través de Trello:
+Este servicio se encarga de gestionar la lógica de negocio, reglas de dominio y la persistencia de datos para la plataforma de adopción:
 
-* 📌 **Tablero de Scrum en Trello:** [Ver Tablero de Seguimiento - Fundación Aurora](https://trello.com/invite/b/6aa4a6320fea3ba01ca637f5/ATTIf3e7a32e8fba286057213e70211c5837F34330A7/fundacion-aurora-scrum)
-
----
-
-## 📚 Documentación Técnica del Sistema
-
-Para consultar las especificaciones detalladas del sistema, puedes navegar directamente a la documentación ubicada en la carpeta `docs/`:
-
-* 📋 [Requisitos del Sistema y Formulación](docs/requisitos.md)
-* 🏗️ [Estructura del Proyecto y Capas](docs/estructura-proyecto.md)
-* 📐 [Diagrama de Clases UML](docs/diagrama-de-clases.md)
-* 📝 [Historias de Usuario](docs/historias-de-usuario.md)
+1. **Gestión de Mascotas:** Endpoints para la administración del catálogo de animales rescatados y sus estados (`DISPONIBLE`, `ADOPTADO`, etc.).
+2. **Gestión de Solicitudes:** Módulo para la recepción, evaluación y cambio de estado (`PENDIENTE`, `APROBADA`, `RECHAZADA`) de las solicitudes de adopción.
+3. **Control de Usuarios y Catálogos:** Persistencia de datos de usuarios y catalogación relacional con restricciones de integridad.
 
 ---
 
-## 👭 Plan de Trabajo (16 Semanas / 8 Sprints)
+## 🛠️ Stack Tecnológico
 
-Organizaremos el proyecto en **16 semanas**, divididas en 4 etapas principales ejecutadas mediante Sprints de Scrum:
-
-- **Etapa 1: Análisis y Diseño (Semanas 1 a 4 / Sprints 1 y 2)**
-    - Levantamiento de requisitos funcionales y no funcionales.
-    - Creación y refinamiento de Historias de Usuario para el Product Backlog.
-    - Elaboración del Diagrama de Clases y diseño del esquema de Base de Datos.
-    - Estructuración de la documentación técnica inicial.
-
-- **Etapa 2: Desarrollo Backend (Semanas 5 a 8 / Sprints 3 y 4)**
-    - Creación de la arquitectura base en Spring Boot.
-    - Persistencia de datos con PostgreSQL y Spring Data JPA.
-    - Construcción de los endpoints (API REST) para entidades, servicios y controladores.
-
-- **Etapa 3: Desarrollo Frontend (Semanas 9 a 12 / Sprints 5 y 6)**
-    - Creación de la interfaz de usuario con React y Vite.
-    - Implementación del catálogo público interactivo.
-    - Formulario de adopción y vistas para el panel de administración.
-
-- **Etapa 4: Integración, Pruebas y Despliegue (Semanas 13 a 16 / Sprints 7 y 8)**
-    - Integración cliente-servidor mediante consumo de API REST.
-    - Pruebas funcionales del sistema.
-    - Despliegue en servicios cloud (Vercel / Render / Supabase) para el portafolio.
+- **Lenguaje:** Java 17+
+- **Framework:** Spring Boot (Spring Data JPA, Spring Web)
+- **Base de Datos:** PostgreSQL (Alojada en la nube con **Supabase**)
+- **Documentación y Pruebas:** Postman
+- **Gestor de Dependencias:** Maven
+- **Control de Versiones:** Git / GitHub (`develop`)
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 📚 Documentación Técnica & API
 
-- **Frontend:** React + Vite
-- **Backend:** Java + Spring Boot (Spring Data JPA)
-- **Base de Datos:** PostgreSQL
-- **Control de Versiones y Metodología:** Git/GitHub (Rama activa `develop`) y Scrum (Trello)
+Toda la documentación técnica del servidor y los contratos de la API se encuentran en la carpeta `docs/`:
+
+- 📋 [Requisitos del Sistema y Formulación](docs/requisitos.md)
+- 🏗️ [Estructura del Proyecto y Capas](docs/estructura-proyecto.md)
+- 📐 [Diagrama de Clases UML](docs/diagrama-de-clases.md)
+- 📝 [Historias de Usuario](docs/historias-de-usuario.md)
+- 🚀 [Colección de Pruebas API REST (Postman)](docs/FundacionAurora.postman_collection.json)
+
+---
+
+## 🚀 Configuración y Ejecución Local
+
+### Prerrequisitos
+- Java JDK 17 o superior
+- Maven 3.8+
+- Cuenta/Instancia en Supabase (PostgreSQL)
+
+### Pasos para ejecutar
+1. Clonar el repositorio y posicionarse en la rama `develop`:
+   ```bash
+   git clone [https://github.com/angelicasaenz/fundacion-aurora.git](https://github.com/angelicasaenz/fundacion-aurora.git)
+   git checkout develop
+   
+### Configurar el archivo src/main/resources/application.properties reemplazando los valores entre <...> por tus credenciales locales/personales:
+
+    spring.datasource.url=jdbc:postgresql://<TU_HOST_SUPABASE>:5432/postgres
+    spring.datasource.username=postgres
+    spring.datasource.password=<TU_CONTRASEÑA_SUPABASE>
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+
+### Compilar y ejecutar la aplicación desde la terminal:
+
+    mvn spring-boot:run

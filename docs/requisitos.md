@@ -6,8 +6,8 @@
 
 ## 👥 Equipo de Trabajo
 
-* **Angélica Sáenz** — *Estudiante de Ingeniería de Software*
-* **Paula Cabrera** — *Estudiante de Ingeniería de Software*
+- **Angélica Sáenz** — *Estudiante de Ingeniería de Software*
+- **Paula Cabrera** — *Estudiante de Ingeniería de Software*
 
 ---
 
@@ -28,28 +28,32 @@ Para solucionar esta problemática, se define un sistema de información central
 ## 3. Objetivos del Sistema
 
 ### **Objetivo General**
-Desarrollar una aplicación web full-stack para la **Fundación Aurora** utilizando una arquitectura desacoplada (Spring Boot, PostgreSQL y React) que permita gestionar el registro de mascotas rescatadas y sistematizar el proceso de adopción.
+Desarrollar una aplicación web full-stack para la **Fundación Aurora** utilizando una arquitectura desacoplada (Spring Boot, PostgreSQL en Supabase y React) que permita gestionar el registro de mascotas rescatadas y sistematizar el proceso de adopción.
 
 ### **Objetivos Específicos**
-* **Analizar** los procesos operativos de la fundación para determinar los requisitos funcionales y no funcionales del software.
-* **Diseñar** el esquema de base de datos relacional y el diagrama de clases por capas para garantizar la escalabilidad de la arquitectura.
-* **Construir** una API REST en Spring Boot para el procesamiento de la lógica de negocio y la persistencia de datos en PostgreSQL.
-* **Implementar** una interfaz web interactiva en React para la visualización del catálogo de mascotas y el envío de solicitudes de adopción.
-* **Desplegar** la solución en entornos de nube (Vercel / Render / Supabase) para su puesta en producción.
+- **Analizar** los procesos operativos de la fundación para determinar los requisitos funcionales y no funcionales del software.
+- **Diseñar** el esquema de base de datos relacional y el diagrama de clases por capas para garantizar la escalabilidad de la arquitectura.
+- **Construir** una API REST en Spring Boot para el procesamiento de la lógica de negocio y la persistencia de datos en PostgreSQL (Supabase).
+- **Implementar** una interfaz web interactiva en React para la visualización del catálogo de mascotas y el envío de solicitudes de adopción.
+- **Desplegar y documentar** la solución en entornos de nube (Vercel / Supabase) verificando contratos mediante Postman.
 
 ---
 
 ## 4. Requisitos del Sistema
 
 ### **A. Requisitos Funcionales (RF)**
-* **RF01 - Gestión de Usuarios y Roles:** El sistema debe permitir registrar usuarios y gestionar roles diferenciados (`ADMINISTRADOR` y `ADOPTANTE`).
-* **RF02 - Autenticación y Seguridad:** El sistema debe validar credenciales de acceso para proteger las rutas del panel de administración y verificar el rol de los usuarios.
-* **RF03 - Registro y Gestión de Mascotas y Catálogos (Admin):** El usuario Administrador debe poder crear, editar, listar y eliminar mascotas (`nombre`, `especie`, `raza`, `edadAproximada`, `estadoSalud`, `descripcion`, `urlImagen`), así como clasificarlas dentro de un `Catalogo` o sección específica.
-* **RF04 - Consulta de Catálogo Público:** Los usuarios visitantes y adoptantes pueden consultar las mascotas con estado `DISPONIBLE`, agrupadas por catálogo y filtrarlas dinámicamente por especie.
-* **RF05 - Solicitud de Adopción (Adoptante):** Los usuarios autenticados con rol adoptante pueden registrar un formulario de postulación vinculado a una mascota específica, creando la solicitud en estado `PENDIENTE`.
-* **RF06 - Gestión de Solicitudes (Admin):** El Administrador puede revisar las solicitudes recibidas y cambiar su estado a `APROBADA` o `RECHAZADA`. Al aprobar una solicitud, el estado de la mascota asociada debe cambiar automáticamente a `ADOPTADO`.
+
+- **RF01 - Gestión de Usuarios y Roles:** El sistema debe permitir registrar usuarios y gestionar roles diferenciados (`ADMINISTRADOR` y `ADOPTANTE`).
+- **RF02 - Autenticación y Seguridad:** El sistema debe validar credenciales de acceso para proteger las rutas del panel de administración y verificar el rol de los usuarios.
+- **RF03 - Registro y Gestión de Mascotas y Catálogos (Admin):** El usuario Administrador debe poder crear, editar, listar y eliminar mascotas (`nombre`, `especie`, `raza`, `edad`, `estado`, `descripcion`), así como clasificarlas dentro de un `Catalogo` o sección específica.
+- **RF04 - Consulta de Catálogo Público:** Los usuarios visitantes y adoptantes pueden consultar las mascotas con estado `DISPONIBLE`, agrupadas por catálogo y filtrarlas dinámicamente por especie.
+- **RF05 - Solicitud de Adopción (Adoptante):** Los usuarios autenticados con rol adoptante pueden registrar un formulario de postulación vinculado a una mascota específica y un motivo, creando la solicitud en estado `PENDIENTE`.
+- **RF06 - Gestión de Solicitudes (Admin):** El Administrador puede revisar las solicitudes recibidas y cambiar su estado (`PENDIENTE`, `APROBADA`, `RECHAZADA`) mediante endpoints de actualización parcial (`PATCH`). Al aprobar una solicitud, el estado de la mascota asociada debe actualizarse según la regla de negocio.
+- **RF07 - Control de Integridad Referencial:** El sistema debe impedir la eliminación directa de registros de mascotas que mantengan solicitudes activas asociadas.
 
 ### **B. Requisitos No Funcionales (RNF)**
-* **RNF01 (Arquitectura Desacoplada):** Separación completa entre el cliente Web (React) y el servidor Backend (API REST en Spring Boot).
-* **RNF02 (Persistencia de Datos):** Uso de base de datos relacional PostgreSQL gestionada mediante Spring Data JPA para la interacción con las entidades del sistema.
-* **RNF03 (Despliegue y Seguridad):** Alojamiento en servicios en la nube (Vercel / Render / Supabase) con comunicación segura mediante HTTPS para integración en el portafolio de proyectos.
+
+- **RNF01 (Arquitectura Desacoplada):** Separación completa entre el cliente Web (React) y el servidor Backend (API REST en Spring Boot).
+- **RNF02 (Persistencia Cloud de Datos):** Uso de base de datos relacional PostgreSQL alojada en la nube mediante **Supabase**, gestionada a través de Spring Data JPA con soporte transaccional.
+- **RNF03 (Documentación e Interfaz API):** Verificación y especificación del contrato de la API REST mediante una colección exportable de **Postman** ubicada en `docs/FundacionAurora.postman_collection.json`.
+- **RNF04 (Despliegue y Seguridad):** Alojamiento en servicios en la nube (Vercel / Supabase) con comunicación segura mediante HTTPS para integración en el portafolio de proyectos.
