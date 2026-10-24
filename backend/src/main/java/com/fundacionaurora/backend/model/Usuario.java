@@ -18,6 +18,10 @@ public class Usuario {
 
     private String direccion;
 
+    @Enumerated(EnumType.STRING)
+    private RolUsuario rol;
+
+
     // Constructores
     public Usuario() {}
 
@@ -59,5 +63,13 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public RolUsuario getRol() {
+        return rol;
+    }
+
+    public void setRol(RolUsuario rol) {
+        this.rol = rol;
     }
 }

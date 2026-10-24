@@ -14,7 +14,8 @@ public class Mascota {
     private String especie;
     private String raza;
     private int edad;
-    private String estado;
+    @Enumerated(EnumType.STRING)
+    private EstadoMascota estado;
 
     @ManyToOne
     @JoinColumn(name = "catalogo_id")
@@ -65,18 +66,16 @@ public class Mascota {
         this.edad = edad;
     }
 
-    public String getEstado() {
+    public EstadoMascota getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoMascota estado) {
         this.estado = estado;
-    }
-    public Catalogo getCatalogo() {
-        return catalogo;
     }
 
     public void setCatalogo(Catalogo catalogo) {
         this.catalogo = catalogo;
     }
+
 }
