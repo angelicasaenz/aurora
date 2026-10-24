@@ -16,6 +16,10 @@ public class Mascota {
     private int edad;
     private String estado;
 
+    @ManyToOne
+    @JoinColumn(name = "catalogo_id")
+    private Catalogo catalogo;
+
     // Constructor vacío obligatorio por JPA
     public Mascota() {
     }
@@ -67,5 +71,12 @@ public class Mascota {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+    public Catalogo getCatalogo() {
+        return catalogo;
+    }
+
+    public void setCatalogo(Catalogo catalogo) {
+        this.catalogo = catalogo;
     }
 }

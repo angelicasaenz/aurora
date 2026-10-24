@@ -9,6 +9,5 @@ import java.util.List;
 @Repository
 public interface MascotaRepository extends JpaRepository<Mascota, Long> {
 
-    // Método personalizado para filtrar mascotas por estado ("DISPONIBLE", "ADOPTADO")
     List<Mascota> findByEstado(String estado);
 }

@@ -2,33 +2,40 @@ package com.fundacionaurora.backend.controller;
 
 import com.fundacionaurora.backend.model.Mascota;
 import com.fundacionaurora.backend.service.MascotaService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/mascotas") // Ruta mvn spring-boot:runbase de mascotas
+@RequestMapping("/api/mascotas")
 @CrossOrigin(origins = "*") // conexión con el frontend
 public class MascotaController {
 
-    @Autowired
-    private MascotaService mascotaService;
+    private final MascotaService mascotaService;
 
+    public MascotaController(MascotaService mascotaService) {
+        this.mascotaService = mascotaService;
+    }
     // 1. Endpoint GET: Obtener todas las mascotas (Catálogo público)
     @GetMapping
     public List<Mascota> listarMascotas() {
         return mascotaService.listarMascotas();
     }
 
-    // 2. Endpoint GET por ID: Obtener una mascota específica
+    // 2. Endpoint GET por Estado: Filtrar mascotas
+    @GetMapping("/estado/{estado}")
+    public List<Mascota> obtenerPorEstado(@PathVariable String estado) {
+        return mascotaService.listarPorEstado(estado);
+    }
+
+    // 3. Endpoint GET por ID: Obtener una mascota específica
     @GetMapping("/{id}")
     public Optional<Mascota> obtenerMascotaPorId(@PathVariable Long id) {
         return mascotaService.obtenerMascotaPorId(id);
     }
 
-    // 3. Endpoint POST: Crear una nueva mascota
+    // 4. Endpoint POST: Crear una nueva mascota
     @PostMapping
     public Mascota guardarMascota(@RequestBody Mascota mascota) {
         return mascotaService.guardarMascota(mascota);
