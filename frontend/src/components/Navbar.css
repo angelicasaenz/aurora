@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@600;700&display=swap');
+
+.navbar-container {
+  background-color: #F3E8FF;
+  border-bottom: 1px solid #E9D5FF;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(91, 30, 122, 0.05);
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.aurora-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.aurora-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #4a1d4e;
+  font-size: 0.65rem;
+  margin-bottom: 2px;
+}
+
+.aurora-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6b2d70;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #4A1863;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.navbar-links a:hover {
+  color: #5B1E7A;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #5B1E7A;
+  transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.menu-hamburguesa {
+  display: none;
+  font-size: 1.5rem;
+  color: #2D0C3F;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .menu-hamburguesa {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    box-shadow: 0 10px 20px rgba(91, 30, 122, 0.1);
+    border-bottom: 1px solid #E9D5FF;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .navbar-links.activo {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .navbar-links a {
+    font-size: 1.1rem;
+  }
+
+  .navbar-links a::after {
+    display: none;
+  }
+}

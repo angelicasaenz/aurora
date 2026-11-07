@@ -1,0 +1,150 @@
+.adopciones-container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.adopciones-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.adopciones-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #2D0C3F;
+  font-weight: 700;
+  margin: 0;
+}
+
+.adopciones-header p {
+  color: #4A5568;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0;
+}
+
+.adopciones-form {
+  background-color: #FFFFFF;
+  border: 1px solid #E9D5FF;
+  border-radius: 14px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(91, 30, 122, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4A1863;
+  font-family: 'Playfair Display', serif;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #D8B4FE;
+  background-color: #FAFAFA;
+  font-size: 0.95rem;
+  color: #2D0C3F;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #5B1E7A;
+  background-color: #FFFFFF;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-enviar {
+  background-color: #5B1E7A;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background-color: #4A1863;
+  transform: translateY(-1px);
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+  background-color: #FFFFFF;
+  border: 1px solid #E9D5FF;
+  border-radius: 14px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(91, 30, 122, 0.05);
+}
+
+.mensaje-exito h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #4A1863;
+}
+
+.mensaje-exito p {
+  color: #4A5568;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.btn-secundario {
+  background-color: #5B1E7A;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.btn-secundario:hover {
+  background-color: #4A1863;
+}
