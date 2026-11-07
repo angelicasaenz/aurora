@@ -1,0 +1,180 @@
+.donaciones-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.donaciones-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.donaciones-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #2D0C3F;
+  font-weight: 700;
+}
+
+.donaciones-header p {
+  color: #4A5568;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Grid de Tarjetas */
+.donaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.donacion-card {
+  background: linear-gradient(135deg, #eeecf0 0%, #eee8f4 100%);
+  border: 1px solid #D8B4FE;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(91, 30, 122, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donacion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(91, 30, 122, 0.15);
+}
+
+.card-header-tipo {
+  background-color: #f0eaf7;
+  color: #5B1E7A;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.donacion-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #4A1863;
+  margin: 0;
+}
+
+.instruccion {
+  color: #4A5568;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dato-caja {
+  background-color: #FFFFFF;
+  border: 1px solid #D8B4FE;
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.numero {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2D0C3F;
+}
+
+.btn-copiar {
+  background-color: #5B1E7A;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-copiar:hover {
+  background-color: #4A1863;
+  transform: translateY(-1px);
+}
+
+.titular-cuenta {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-top: 5px;
+}
+
+/* Sección Especie con la imagen del perro comiendo y degradado elegante */
+.especie-section {
+  background: linear-gradient(rgba(45, 12, 63, 0.30), rgba(74, 24, 99, 0.40)), var(--bg-especie);  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  padding: 50px 40px;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(91, 30, 122, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.especie-section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 25px rgba(91, 30, 122, 0.2);
+}
+
+.especie-contenido-interno {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.especie-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.especie-section p {
+  color: #F3E8FF;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.especie-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  background-color: rgba(45, 12, 63, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detalle-item {
+  color: #F3E8FF;
+  font-size: 0.95rem;
+}
+
+.detalle-item strong {
+  color: #FFFFFF;
+}

@@ -1,0 +1,39 @@
+.footer-container {
+  width: 100%;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%);
+  color: #4A1863;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #D8B4FE;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.footer-logo:hover {
+  transform: scale(1.03);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #5B1E7A;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
